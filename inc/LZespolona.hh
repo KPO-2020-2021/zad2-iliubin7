@@ -25,6 +25,20 @@ bool  operator == (LZespolona  Skl1,  LZespolona  Skl2);
 
 LZespolona  operator + (LZespolona  Skl1,  LZespolona  Skl2);
 
+LZespolona operator - (LZespolona Skl1, LZespolona Skl2);
+
+LZespolona operator * (LZespolona Skl1, LZespolona Skl2);
+
 LZespolona operator / (LZespolona Skl1, double Skl2);
+
+LZespolona Sprzezenie(LZespolona Skl1);
+
+double Modul2(LZespolona Skl1);
+
+LZespolona operator / (LZsepolona Skl1, LZespolona Skl2);
+
+std::ostream& operator << (std::ostream, LZespolona&);
+
+std::istream& operator >> (std::istream, LZespolona&);
 
 #endif
