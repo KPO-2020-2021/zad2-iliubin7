@@ -1,4 +1,5 @@
 #include "WyrazenieZesp.hh"
+#include <iostream>
 
 using namespace std;
 /*
