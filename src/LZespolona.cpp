@@ -1,5 +1,6 @@
 #include "LZespolona.hh"
 #include <cmath>
+#include <iostream>
 
 #define MIN_DIFF 0.00001
 
@@ -84,7 +85,7 @@ LZespolona  operator / (LZespolona  Skl1,  double  Skl2){
   LZespolona  Wynik;
   if(Skl2 == 0)
   {
-    std::cerr<<"blad" << endl;
+    std::cerr<<"blad" << std::endl;
     exit(-1);
   }
   Wynik.re = Skl1.re / Skl2;
