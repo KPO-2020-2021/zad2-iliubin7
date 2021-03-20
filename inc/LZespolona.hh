@@ -35,7 +35,7 @@ LZespolona Sprzezenie(LZespolona Skl1);
 
 double Modul2(LZespolona Skl1);
 
-LZespolona operator / (LZsepolona Skl1, LZespolona Skl2);
+LZespolona operator / (LZespolona Skl1, LZespolona Skl2);
 
 std::ostream& operator << (std::ostream, LZespolona&);
 
