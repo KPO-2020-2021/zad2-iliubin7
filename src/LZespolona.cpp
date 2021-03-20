@@ -111,9 +111,8 @@ LZespolona  Sprzezenie(LZespolona  Skl1){
  * Realizuje operacje modul do kwadratu liczby zespolonej
  */
 double Modul2(LZespolona Skl1){
-   LZespolona Wynik;
-   Wynik.re = Skl1.re*Skl1.re - Skl1.im*Skl1.im;
-   Wynik.im = 2*Skl1.re*Skl1.im;
+   double Wynik;
+   Wynik= Skl1.re*Skl1.re + Skl1.im*Skl1.im;
    return Wynik;
 }
 
