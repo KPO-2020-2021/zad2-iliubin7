@@ -84,7 +84,7 @@ LZespolona  operator / (LZespolona  Skl1,  double  Skl2){
   LZespolona  Wynik;
   if(Skl2 == 0)
   {
-    cerr<<"blad" << endl;
+    std::cerr<<"blad" << endl;
     exit(-1);
   }
   Wynik.re = Skl1.re / Skl2;
@@ -124,7 +124,7 @@ LZespolona operator / (LZespolona Skl1, LZespolona Skl2){
 
 std::ostream& operator << (std::ostream &StrWyj, LZespolona &LZesp)
 {
-  StrWyj << "(" << LZesp.re << std::showpos << LZesp.im << std::nowshowpos << "i)";
+  StrWyj << "(" << LZesp.re << std::showpos << LZesp.im << std::noshowpos << "i)";
   return StrWyj;
 }
 
