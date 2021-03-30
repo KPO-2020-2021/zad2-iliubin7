@@ -6,7 +6,7 @@
 
 /*!
  *  Plik zawiera definicje struktury LZesplona oraz zapowiedzi
- *  przeciazen operatorow arytmetycznych dzialajacych na tej 
+ *  przeciazen operatorow arytmetycznych dzialajacych na tej
  *  strukturze.
  */
 
@@ -14,34 +14,39 @@
 /*!
  * Modeluje pojecie liczby zespolonej
  */
-struct  LZespolona {
+class  LZespolona {
   double   re;    /*! Pole repezentuje czesc rzeczywista. */
   double   im;    /*! Pole repezentuje czesc urojona. */
+  public:
+      LZespolona(double _re=0,double _im=0){im=_im;re=_re;}
+    bool  operator == (  LZespolona  Skl2);
+
+LZespolona  operator + (  LZespolona  Skl2);
+
+LZespolona operator - ( LZespolona Skl2);
+
+LZespolona operator * ( LZespolona Skl2);
+
+LZespolona operator / ( double Skl2);
+
+LZespolona Sprzezenie();
+
+double Modul2();
+
+LZespolona operator / ( LZespolona Skl2);
+const double   re_get()const{return re;};
+const double   im_get()const{return re;};
+
+  double  & re_set(){return re;};
+  double   &im_set(){return re;};
 };
 
 
-/*
- * Dalej powinny pojawic sie zapowiedzi definicji przeciazen operatorow
- */
 
-bool  operator == (LZespolona  Skl1,  LZespolona  Skl2);
 
-LZespolona  operator + (LZespolona  Skl1,  LZespolona  Skl2);
 
-LZespolona operator - (LZespolona Skl1, LZespolona Skl2);
+std::ostream& operator << (std::ostream&, const LZespolona&);
 
-LZespolona operator * (LZespolona Skl1, LZespolona Skl2);
-
-LZespolona operator / (LZespolona Skl1, double Skl2);
-
-LZespolona Sprzezenie(LZespolona Skl1);
-
-double Modul2(LZespolona Skl1);
-
-LZespolona operator / (LZespolona Skl1, LZespolona Skl2);
-
-std::ostream& operator << (std::ostream, LZespolona&);
-
-std::istream& operator >> (std::istream, LZespolona&);
+std::istream& operator >> (std::istream&, LZespolona&);
 
 #endif
