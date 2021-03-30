@@ -19,7 +19,7 @@ class  LZespolona {
   double   im;    /*! Pole repezentuje czesc urojona. */
   public:
       LZespolona(double _re=0,double _im=0){im=_im;re=_re;}
-    bool  operator == (  LZespolona  Skl2);
+    bool  operator == (  LZespolona  Skl2) const;
 
 LZespolona  operator + (  LZespolona  Skl2);
 
