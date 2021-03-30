@@ -33,9 +33,18 @@ int main(int argc, char **argv)
 
   WyrazenieZesp   WyrZ_PytanieTestowe;
   
+  try{
   while (PobierzNastpnePytanie(&BazaT,&WyrZ_PytanieTestowe)) {
     cout << " Czesc rzeczywista pierwszego argumentu: ";
     cout << WyrZ_PytanieTestowe.Arg1.re << endl;
+     }
+  }
+  catch(runtime_error& e) {
+    // prints that exception has occured
+    // calls the what function
+    // using runtime error object
+    cout << "Exception occured" << endl
+         << e.what();
   }
 
   
