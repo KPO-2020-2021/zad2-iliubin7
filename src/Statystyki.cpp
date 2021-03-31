@@ -1,8 +1,16 @@
-#include "Statystyki.hh"
+#include "inc/Statystyki.hh"
+#include <iostream>
 
-void Statystyka(int good, int bad){
-    double percent=(good*100)/(good + bad);
-    cout << "Ilosc dobrych odpowiedzi:" << good << enld;
-    cout << "Ilosc zlych odpowieedzi:" << bad << endl;
-    cout << "Wynik procentowy poprawnych odpowiedzi:" << percent << endl;
+void Statystyki::Wypisz()
+{
+    cout<< "Ilosc dobrych odpowiedzi: "<< dobrze <<endl;
+    cout<< "Ilosc zlych odpowiedzi: "<< zle <<endl;
+    cout <<"Wynik procentowy poprawnych odpowiedzi:" << procent_dobrze<<endl;
+}
+
+void Statystyki::Oblicz()
+{
+         procent_dobrze=dobrze*100.0/(dobrze+zle);
+     procent_zle=dobrze*100.0/(dobrze+zle);;
+
 }

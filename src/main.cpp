@@ -1,6 +1,6 @@
 #include <iostream>
 #include "BazaTestu.hh"
-
+#include "Statystyki.hh"
 using namespace std;
 
 
@@ -26,28 +26,43 @@ int main(int argc, char **argv)
   }
 
 
-  
+
   cout << endl;
   cout << " Start testu arytmetyki zespolonej: " << argv[1] << endl;
   cout << endl;
 
   WyrazenieZesp   WyrZ_PytanieTestowe;
-  
-  try{
+LZespolona odp;
+Statystyki st;
   while (PobierzNastpnePytanie(&BazaT,&WyrZ_PytanieTestowe)) {
-    cout << " Czesc rzeczywista pierwszego argumentu: ";
-    cout << WyrZ_PytanieTestowe.Arg1.re << endl;
-     }
-  }
-  catch(runtime_error& e) {
-    // prints that exception has occured
-    // calls the what function
-    // using runtime error object
-    cout << "Exception occured" << endl
-         << e.what();
-  }
+    cout << "Podaj wynik operacji: "<<WyrZ_PytanieTestowe << "\n";
+    for(int i=0; i<1; i++)
+    {
+       cout << "Wpisana odpowiedz: ";
+       cin>>odp;
+       if(cin.good())
+       {
+           break;
+       }
+       cin.clear();
+       cin.ignore(1024,'\n');
+    }
+    if(Oblicz(WyrZ_PytanieTestowe)==odp)
+    {
+        cout<<"odpowiedz poprawna\n"<<endl;
+        st.dobrze++;
+    }
+    else
+    {
+          cout<<"Blad. Prawidlowym wynikiem jest:"<< odp << "\n" <<endl;
+          st.zle++;
+    }
 
-  
+     }
+
+st.Oblicz();
+st.Wypisz();
+
   cout << endl;
   cout << " Koniec testu" << endl;
   cout << endl;
