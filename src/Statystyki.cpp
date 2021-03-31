@@ -1,4 +1,4 @@
-#include "inc/Statystyki.hh"
+#include "Statystyki.hh"
 #include <iostream>
 
 void Statystyki::Wypisz()

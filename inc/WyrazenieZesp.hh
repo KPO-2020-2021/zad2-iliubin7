@@ -29,13 +29,11 @@ class WyrazenieZesp {
  *
  */
 
-
-void Wyswietl(WyrazenieZesp  WyrZ);
-
-LZespolona Oblicz(WyrazenieZesp WyrZ);
-
 ostream & operator << (ostream & wyj, const WyrazenieZesp  & lz);
 
 istream & operator >> (istream & wej,  WyrazenieZesp  & lz);
+
+LZespolona Oblicz(WyrazenieZesp WyrZ);
+void Wyswietl(WyrazenieZesp  WyrZ);
 
 #endif
