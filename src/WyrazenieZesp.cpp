@@ -1,42 +1,7 @@
-#include "../inc/WyrazenieZesp.hh"
+#include "WyrazenieZesp.hh"
 #include <iostream>
 
 using namespace std;
-/*
- * Tu nalezy zdefiniowac funkcje, ktorych zapowiedzi znajduja sie
- * w pliku naglowkowym.
- */
-
-void Wyswietl(WyrazenieZesp  WyrZ)
-{
-    std::cout << WyrZ;
-}
-
-LZespolona Oblicz(WyrazenieZesp WyrZ)
-{
-    LZespolona wynik;
-    if (WyrZ.Op ==  Op_Dodaj)
-    {
-        wynik = WyrZ.Arg1 + WyrZ.Arg2;   // cout <<"+";
-    }
-
-    if (WyrZ.Op == '-')
-    {
-        wynik = WyrZ.Arg1 - WyrZ.Arg2;  // cout <<"-";
-    }
-
-    if (WyrZ.Op =='*')
-    {
-        wynik = WyrZ.Arg1 * WyrZ.Arg2;  // cout <<"*";
-    }
-
-    if (WyrZ.Op == '/')
-    {
-        wynik = WyrZ.Arg1 / WyrZ.Arg2;  // cout <<"/";
-    }
-    return wynik;
-}
-
 ostream & operator << (ostream & wyj, const WyrazenieZesp  & WyrZ)
 {
   wyj << WyrZ.Arg1;
@@ -45,17 +10,17 @@ ostream & operator << (ostream & wyj, const WyrazenieZesp  & WyrZ)
        cout<<"+";
     }
 
-    if (WyrZ.Op == '-')
+    if (WyrZ.Op == Op_Odejmij)
     {
-             cout<<"/";
+             cout<<"-";
     }
 
-    if (WyrZ.Op =='*')
+    if (WyrZ.Op == Op_Mnoz)
     {
               cout<<"*";
     }
 
-    if (WyrZ.Op == '/')
+    if (WyrZ.Op == Op_Dziel)
     {
               cout<<"/";
     }
@@ -94,4 +59,35 @@ istream & operator >> (istream & wej,WyrazenieZesp  & lz)
     }
   wej >> lz.Arg2;
   return wej;
+}
+
+
+void Wyswietl(WyrazenieZesp  WyrZ)
+{
+    std::cout << WyrZ;
+}
+
+LZespolona Oblicz(WyrazenieZesp WyrZ)
+{
+    LZespolona wynik;
+    if (WyrZ.Op ==  Op_Dodaj)
+    {
+        wynik = WyrZ.Arg1 + WyrZ.Arg2;// couit<<"+";
+    }
+
+    if (WyrZ.Op == '-')
+    {
+        wynik = WyrZ.Arg1 - WyrZ.Arg2;
+    }
+
+    if (WyrZ.Op =='*')
+    {
+        wynik = WyrZ.Arg1 * WyrZ.Arg2;
+    }
+
+    if (WyrZ.Op == '/')
+    {
+        wynik = WyrZ.Arg1 / WyrZ.Arg2;
+    }
+    return wynik;
 }
