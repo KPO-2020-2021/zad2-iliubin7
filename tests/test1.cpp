@@ -245,4 +245,19 @@ TEST_CASE("Test LZespolona dzielenie, znany wynik") {
     CHECK(Oblicz(x)== t);
 }
 
+TEST_CASE("Test LZespolona +=, znany wynik") {
+    WyrazenieZesp x{{2,-1},Op_Dodaj,{1,-1}};
+    LZespolona t ={3,0};
+
+
+    CHECK(Oblicz(x)== t);
+}
+
+TEST_CASE("Test LZespolona /=, znany wynik") {
+    WyrazenieZesp x{{1,1},Op_Dziel,{1,1}};
+    LZespolona t ={1,0};
+
+
+    CHECK(Oblicz(x)== t);
+}
 

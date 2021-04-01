@@ -38,6 +38,10 @@ LZespolona operator / ( LZespolona Skl2);
 const double   re_get()const{return re;};
 const double   im_get()const{return re;};
 
+LZespolona  operator += (  LZespolona const &Skl2);
+
+LZespolona  operator /= (  LZespolona const &Skl2);
+
   double  & re_set(){return re;};
   double   &im_set(){return re;};
 };

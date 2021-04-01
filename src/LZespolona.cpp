@@ -117,6 +117,20 @@ LZespolona LZespolona::operator / ( LZespolona Skl2){
   return Wynik;
 }
 
+LZespolona  LZespolona::operator += (  LZespolona const &Skl2){
+
+  re += Skl2.re_get();
+  im += Skl2.im_get();
+  return (*this);
+}
+
+LZespolona  LZespolona::operator /= (  LZespolona const &Skl2){
+
+  re /= Skl2.re_get();
+  im /= Skl2.im_get();
+  return (*this);
+}
+
 std::ostream& operator << (std::ostream &StrWyj, const LZespolona &LZesp)
 {
   StrWyj.precision(2);
@@ -138,41 +152,3 @@ std::istream& operator >> (std::istream &StrWej, LZespolona &LZesp){
   WczytajTenZnak(StrWej, ')');
   return StrWej;
 }
-
-/*
- std::istream& operator >> (std::istream &StrWej, LZespolona &LZesp)
- {
-   char nawias, litera;
-   StrWej >> nawias;
-   if(StrWej.fail())
-   return StrWej;
-  if(nawias!=')')
-   {
-   StrWej.setstate(std::ios::failbit);
-   return StrWej;
-   }
-   StrWej >> LZesp.re;
-   if(StrWej.fail())
-   return StrWej;
-   StrWej >> LZesp.im;
-   if(StrWej.fail())
-   return StrWej;
-   StrWej >> litera;
-   if(StrWej.fail())
-   return StrWej;
-   if(litera != 'i')
-   {
-   StrWej.setstate(std::ios::failbit);
-   return StrWej;
-   }
-   StrWej >> nawias;
-   if(StrWej.fail())
-   return StrWej;
-   if(nawias != ')')
-   {
-   StrWej.setstate(std::ios::failbit);
-   return StrWej;
-   }
-   return StrWej;
- }
-*/
